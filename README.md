@@ -6,16 +6,19 @@ This implementation requires Python 2.7, PyTorch 0.3.1 and Gensim >= 0.12.0.
   
 
 ### Experiments
-First of all, you need to include official datasets in SDP format in the ``data`` folder, and use the following script to convert them to the proper input DAG format:
+First of all, you need to include official datasets in SDP format in the ``data`` folder, and use the following script to convert them to the proper input DAG format. For instance, for the DM formalism:
 
-     python convert.py <file>.sdp <file>.dag
+     python ./scripts/convert.py ./data/en_dm_train.sdp ./data/en_dm_train.dag
+     python ./scripts/convert.py ./data/en_dm_dev.sdp ./data/en_dm_dev.dag
+     python ./scripts/convert.py ./data/en_dm_test.id.sdp ./data/en_dm_test.id.dag
+     python ./scripts/convert.py ./data/en_dm_test.ood.sdp ./data/en_dm_test.ood.dag
 	
 To train the parser, you need to include the pre-trained word embeddings in the ``embs`` folder and run the following script, indicating the model name and the formalism that you want to use:
 
     ./scripts/run_parser.sh <model> <dm|pas|psd>
 
 
-Finally, to evaluate the best trained model, just use the oficial script to compute the Labelled and Unlabelled F1 scores (you must indicate the best epoch on development set reported during training, the choosen formalism and the trained model name):
+Finally, to evaluate the best trained model on the test set, just use the oficial script to compute the Labelled and Unlabelled F1 scores (you must indicate the epoch of the best reported model on the development set, the choosen formalism and the trained model name):
 
     ./scripts/eval.sh <best epoch> <dm|pas|psd> <model>
 
