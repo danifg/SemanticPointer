@@ -1,5 +1,5 @@
 # SemanticPointer
-This repository includes the code of the Semantic Dependency Parser with Pointer Networks described in ACL paper [Transition-based Semantic Dependency Parsing with Pointer Networks](https://github.com/danifg/SemanticPointer). The implementation is based on the dependency parser by Ma et al. (2018) (https://github.com/XuezheMax/NeuroNLP2) and reuses part of its code.
+This repository includes the code of the Semantic Dependency Parser with Pointer Networks described in ACL paper [Transition-based Semantic Dependency Parsing with Pointer Networks](https://www.aclweb.org/anthology/2020.acl-main.629.pdf). The implementation is based on the dependency parser by Ma et al. (2018) (https://github.com/XuezheMax/NeuroNLP2) and reuses part of its code.
 
 ### Requirements
 This implementation requires Python 2.7, PyTorch 0.3.1 and Gensim >= 0.12.0.
@@ -15,16 +15,28 @@ First of all, you need to include official datasets in SDP format in the ``data`
 	
 To train the parser, you need to include the pre-trained word embeddings in the ``embs`` folder and run the following script, indicating the model name and the formalism that you want to use:
 
-    ./scripts/run_parser.sh <model> <dm|pas|psd>
+    ./scripts/run_parser.sh <model_name> <dm|pas|psd>
 
 
-Finally, to evaluate the best trained model on the test set, just use the oficial script to compute the Labelled and Unlabelled F1 scores (you must indicate the epoch of the best reported model on the development set, the choosen formalism and the trained model name):
+Finally, to evaluate the best trained model on the test set, just use the oficial script to compute the Labelled and Unlabelled F1 scores (you must indicate the epoch of the best reported model on the development set, the chosen formalism and the trained model name):
 
-    ./scripts/eval.sh <best epoch> <dm|pas|psd> <model>
+    ./scripts/eval.sh <best_epoch> <dm|pas|psd> <model_name>
 
 
 ### Citation
-To appear in ACL 2020.
+
+	@inproceedings{fernandez-gonzalez-gomez-rodriguez-2020-transition,
+    title = "Transition-based Semantic Dependency Parsing with Pointer Networks",
+    author = "Fern{\'a}ndez-Gonz{\'a}lez, Daniel  and
+      G{\'o}mez-Rodr{\'\i}guez, Carlos",
+    booktitle = "Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics",
+    month = jul,
+    year = "2020",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://www.aclweb.org/anthology/2020.acl-main.629",
+    pages = "7035--7046"
+}
     
 ### Acknowledgments
 This work has received funding from the European Research Council (ERC), under the European Union's Horizon 2020 research and innovation programme (FASTPARSE, grant agreement No 714150), from the ANSWER-ASAP project (TIN2017-85160-C2-1-R) from MINECO, and from Xunta de Galicia (ED431B 2017/01, ED431G 2019/01).
