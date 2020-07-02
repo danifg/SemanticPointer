@@ -35,8 +35,7 @@ Finally, to evaluate the best trained model on the test set, just use the oficia
     address = "Online",
     publisher = "Association for Computational Linguistics",
     url = "https://www.aclweb.org/anthology/2020.acl-main.629",
-    pages = "7035--7046"
-}
+    pages = "7035--7046"}
     
 ### Acknowledgments
 This work has received funding from the European Research Council (ERC), under the European Union's Horizon 2020 research and innovation programme (FASTPARSE, grant agreement No 714150), from the ANSWER-ASAP project (TIN2017-85160-C2-1-R) from MINECO, and from Xunta de Galicia (ED431B 2017/01, ED431G 2019/01).
